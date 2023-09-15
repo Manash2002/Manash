@@ -1,0 +1,199 @@
+SQL--
+--------
+
+DATA--
+
+Data is a rough fact which describes the properties of an entity.
+
+DATABASE--
+
+Database is a place or a medium where we can store the data in a systematic and organised manner.
+DBMS(DATABASE MANAGEMENT SYSTEM)--
+It is a software which is used to maintain and manage the data. We can use some query language to interact with DBMS.
+In DBMS data stores in the form of files.
+
+RDBMS--
+
+RDBMS stands for relational database managememt system.
+RDBMS is also one of the kind of DBMS software where data will be store in the form of table.
+A DBMS software which follows relational model will become RDBMS.
+The key important features of RDBMS are security and authorization.
+Authorization is a process where the database manager gets imformation about the authorised user.
+
+RELATIONAL MODEL--
+
+Retional model is the technique which was develop by EF Codd.
+In relational model data will be stored in the form of table.
+
+EF Codd RULE --
+
+The data enter into cell must be single valued data.
+Cell is the smallest unit of the table.
+The RDBMS data will be stored in the form of table including meta data.
+According to EF Codd rule we can establish the connection between two tables by the help of key attribute.
+We can validate the data enter into the table with the help of data type and constraints.
+
+DATA TYPE --
+
+There are 5 type of data type in SQL-
+1)CHAR    2)VARCHAR/VARCHAR2    3)NUMBER     4)DATA     5)LOB -- BLOB & CLOB
+
+CHAR --
+
+In CHAR datatype the allowed characters are uppercase "A-Z", lowercase "a-z", digit"0-9", special characters like @, #, *, &.
+It is mandatory to enclose CHAR data in single cot('').
+syntax -- CHAR(SIZE)
+In CHAR datatype the size will describe the maximum number of characters allowed in a perticular coloum.
+Here specified size is mandatory. The maximum size of CHAR is 2000.
+CHAR datatype follows fixed length memory allocation.
+
+VARCHAR --
+
+In VARCHAR datatype the allowed characters are uppercase "A-Z", lowercase "a-z", digit"0-9", special characters like @, #, *, &, _, $.
+It is mandatory to enclose VARCHAR data in single cot('').
+syntax -- VARCHAR(SIZE)
+In VARCHAR datatype the size will describe the maximum number of characters allowed in a perticular coloum.
+Here specified size is mandatory. The maximum size of VARCHAR is 2000.
+VARCHAR datatype follows variable length memory allocation.
+VARCHAR2 --
+
+VARCHAR2 is an updated version of varchar where size will be increased to 4000.
+
+NUMBER --
+
+NUMBER datatype will help to store numirical values, if we can declare any coloum as number then we can insert any phone no. , serial no. , registration no. ,
+etc. according to the requirement of user.
+
+DATE --
+
+DD-MON-YYYY --- 21-JUN-2023
+DD-MON-YY  --- 21-JUN-23
+We have to use single cot to enclose the DATE datatype,
+
+LOB (LARGE OBJECT) --
+
+1) BLOB --
+BLOB is used for storing binary data like images, videos, files, etc. upto 4GB.
+2) CLOB --
+CLOB is used for storing characters upto 4GB.
+
+CONSTRAINTS --
+
+Constraints are the addition rule assigned to a particular coloum.
+If we assign constraints then it is mandatory the data should be satisfied constraint rule. 
+
+There are 5 types of constraints --
+1) UNIQUE  2) NOT NULL   3)PRIMARY KEY   4) CHECK   5) FOREIGN
+
+1) UNIQUE -- 
+If we assign UNIQUE to a coloum then we can't enter any duplicate values.
+
+2) NOT NULL -- 
+If any coloum assign with NOT NULL then we can't enter null values or we can't leave the cell blank.
+
+3) PRIMARY KEY -- 
+It is usefull to identify record uniquely from the table.
+Primary key is the combination of UNIQUE and NOT NULL.
+If a coloum assigned with primary key then it doesn't accept any duplicate value or any null value.
+We can declare only one primary key inside a table.
+Primary key is not mandatory but it is highly recomandate.
+
+CHECK --
+CHECK constraints are usefull for additional validation purpose.
+We have to assign condition, if the condition satisfied then the value will be stored in the table.
+
+FOREIGN KEY --
+It is used to achive relationship between multiple table.
+It is not the combination of UNIQUE and NOT NULL.
+It can accepted repeated or duplicated values.
+A table can contain more than one FOREIGN KEY.
+To become foreign key it should be PRIMARY KEY of its own table.
+
+STATEMENTS OF SQL --
+
+There are 5 statements of SQL --
+1) DDL (DATA DEFINATION LANGUAGE)
+2) DML (DATA MANIPULATION LANGUAGE)
+3) TCL (TRANSACTION CONTROL LANGUAGE)
+4) DCL (DATA CONTROL LANGUAGE)
+5) DQL (DATA QUERY LANGUAGE)
+
+DDL --
+
+Q) How to create a table
+syntax --
+CREATE TABLE TABLENAME
+( COLOUMNAME DATATYPE CONSTRAINTS,
+  COLOUMNAME DATATYPE CONSTRAINTS,
+  COLOUMNAME DATATYPE CONSTRAINTS);
+DESC STD1 / DESCRIBE STD1 -- TO DESCRIBE THE SQL
+Ex --
+CREATE TABLE STD1
+( ROLL NUMBER(3) PRIMARYKEY,
+  SNAME VARCHAR(10) NOTNULL,
+  AGE NUMBER(2) NOTNULL,
+  GENDER VARCHAR(1)  );
+
+DQL --
+
+By the help of DQL we can retrive the data from database table.
+There are 4 statements of DQL --
+1) SELECTION   2) PROJECTION    3) SELECT    4) JOIN
+
+SELECT -- 
+SELECT statement of DQL is used for retrive the data.
+Q) Write a query to display the details of STD1 table?
+Ans) SELECT * FROM STD1;
+ 
+We use * for selecting all the data from database table.
+In query 1st FROM claus starts the execution and SELECT claus ends the execution.
+
+Q) WAQTD student name from student table ?
+Ans) SELECT SNAME FROM STD1;
+
+Q) WAQTD the student name and gender from student table ?
+Ans) SELECT SNAME, GENDER FROM STD1;
+
+Q)WAQTD all the details as well as roll no. of the student ?
+Ans) SELECT STD1.*, ROLL FROM STD1;
+
+PROJECTION --
+
+PROJECTION is used for retriving the data from database table only by selecting coloums.
+syntax -- SELECT */DISTINCT(COLOUMNAME)/EXPRESSION(ALIAS);
+
+#DISTINCT -- DISTINCT is a key word which will help to remove duplicate values from resultant table.
+question --
+
+Q)WAQTD the department number of employee by removing duplicates?
+Ans)SELECT DISTINCT DEPTNO FROM EMP;
+
+Q)WAQTD the job and deptno from employee table by removing duplicates?
+Ans)SELECT DISTINCT DEPTNO, JOB FROM EMP;
+
+DISTINCT should be used as first executable statement in select claus.
+For DISTINCT we can pass coloum name or expression as an argument.
+We can pass multiple coloum to distrinct to remove duplicates data from database table by combining coloums.
+
+#EXPRESSION -- EXPRESSION is the combination of operator and operand.
+
+Q)WAQTD the anual salary of employees from emp table?
+Ans)SELECT SAL*12 FROM EMP;
+
+Q)WAQTD the salary of employee with 10% hike?
+Ans)SELECT SAL+SAL*10/100 FROM EMP;
+
+#ALIAS -- ALIAS is an alternative name which can be provided to any expression or coloum.
+ALIAS can be single word or multiple word and enclosed with double cot (" "). As keyword is optional.
+ex -- SELECT SAL*12 AS "ANNUAL SAL" FORM EMP;
+
+Q)WAQTD emp name, sal, annual sal from employee table?
+Ans)SELECT ENAME,SAL,SAL*12 FROM EMP;
+
+Q)WAQTD name, sal, 1/2 term salary from emp table?
+Ans)SELECT ENAME,SAL,SAL*6 FROM EMP;
+
+Q)WAQTD the details of the employees and salary with 50% deduction?
+Ans)SELECT EMP.*,SAL-SAL*1/2 FROM EMP;
+
+

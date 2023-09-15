@@ -1,0 +1,57 @@
+QUESTIONS OF SQL---------
+
+* WAQTD the details of employee table?
+SELECT * FROM EMP;
+* WAQTD ename from emp table?
+SELECT ENAME FROM EMP;
+* WAQTD all the details as well as comm,deptno,jobs?
+SELECT EMP.*,COMM,DEPTNO,JOB FROM EMP;
+* WAQTD the deptno of employee by removing duplicates?
+SELECT DESTINCT DEPTNO FROM EMP;
+* WAQTD the job and deptno from employee table by removing duplicates?
+SELECT DISTINCT JOB,DEPTNO FROM EMP;
+* WAQTD the annual salary of employee from emp table?
+SELECT SAL* 12 FROM EMP;
+* WAQTD the salary of employees with 10% hike?
+* WAQTD employee name,sal,annual sal from emp table?
+* WAQTD name ,sal,1/2 term salary from emp table?
+* WAQTD the detail of the employees and salary with 50% of deduction?
+* WAQTD the details of the employee where employee name is smith?
+* WAQTD the details of the employee working as clerk?
+* WAQTD the details of the employee those are working in department no. 30?
+* WAQTD the employee name and salary those are earning more than 2500?
+* WAQTD ename and sal which earning more than 2000 by removing duplicates?
+* WAQTD the details of the employee whose deptno is not 10?
+* WAQTD the details of the employee working as clerk as well as in deptno 20?
+* WAQTD the details of the employee those deptno is not 20?
+* WAQTD the details of the emp working as clerk or manager in deptno 10?
+* WAQTD the details of the employee working in deptno 10 or 20?
+* WAQTD the name of the emp working as salesman,president,analyst?
+* WAQTD the detail of the emp those are hired after 1980 and working in deptno 20,30?
+* WAQTD name and sal of emp working in deptno 10,20 and not working as president,analyst?
+* WAQTD the details of the emp hired after 1981 and before 1985?
+* WAQTD name ,sal and those are getting sal between 1000 to 3000?
+* WAQTD name ,sal and those are getting sal not between 1000 to 3000?
+* WAQTD the details of the emp those are hired in the year 1981?
+* WAQTD the details of the emp except those are hired in 1981?
+* WAQTD ename,hiredate,deptno if they are working in deptno 10,20 and hired in the year 1981?
+* WAQTD ename,job,hiredate of the emp those are hired after 1980 but before 1987 and working as manager,salesman?
+* WAQTD 
+* WAQTD 
+* WAQTD 
+* WAQTD 
+* WAQTD 
+* WAQTD 
+* WAQTD 
+* WAQTD 
+* WAQTD 
+* WAQTD 
+* WAQTD 
+* WAQTD 
+* WAQTD 
+* WAQTD 
+* WAQTD 
+* WAQTD 
+* WAQTD 
+* WAQTD 
+* WAQTD 
